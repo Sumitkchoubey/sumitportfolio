@@ -17,7 +17,7 @@ const DemoPortfolio = () => {
       ],
       icon: <Mic style={{ width: '32px', height: '32px' }} />,
       color: "purple-blue",
-      videoUrl: "./videos/audio-to-text-demo.mp4",
+      videoUrl: "https://youtu.be/cpMz1nmnuqg",
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const DemoPortfolio = () => {
       ],
       icon: <BarChart3 style={{ width: '32px', height: '32px' }} />,
       color: "green-teal",
-      videoUrl: "./videos/csv-analyzer-demo.mp4"
+      videoUrl: "https://youtu.be/MfapXhgNLpM"
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ const DemoPortfolio = () => {
       ],
       icon: <MessageSquare style={{ width: '32px', height: '32px' }} />,
       color: "orange-red",
-      videoUrl: "./videos/rag-chatbot-demo.mp4"
+      videoUrl: "https://youtu.be/mjnuCCJOoyE"
     }
   ];
 
@@ -144,7 +144,7 @@ const DemoPortfolio = () => {
       padding: '0 24px',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center', // Changed from space-between to center
+      justifyContent: 'center',
       flexWrap: 'wrap',
       gap: '24px'
     },
@@ -192,7 +192,7 @@ const DemoPortfolio = () => {
     heroContent: {
       maxWidth: '1280px',
       margin: '0 auto',
-      textAlign: 'center' // Ensure text is centered
+      textAlign: 'center'
     },
     heroTitle: {
       fontSize: '48px',
@@ -237,7 +237,7 @@ const DemoPortfolio = () => {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
       gap: '32px',
-      justifyItems: 'center' // Center grid items
+      justifyItems: 'center'
     },
     demoCard: {
       backgroundColor: 'rgba(255, 255, 255, 0.05)',
@@ -248,7 +248,7 @@ const DemoPortfolio = () => {
       transition: 'all 0.3s ease',
       cursor: 'pointer',
       width: '100%',
-      maxWidth: '400px' // Limit card width
+      maxWidth: '400px'
     },
     demoCardHover: {
       transform: 'scale(1.05)',
@@ -262,7 +262,7 @@ const DemoPortfolio = () => {
       alignItems: 'center',
       justifyContent: 'center',
       marginBottom: '24px',
-      margin: '0 auto 24px auto' // Center the icon
+      margin: '0 auto 24px auto'
     },
     demoIconPurple: {
       background: 'linear-gradient(135deg, #9333ea, #2563eb)'
@@ -336,7 +336,7 @@ const DemoPortfolio = () => {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
       gap: '16px',
-      justifyItems: 'center' // Center grid items
+      justifyItems: 'center'
     },
     skillCard: {
       backgroundColor: 'rgba(255, 255, 255, 0.05)',
@@ -346,7 +346,7 @@ const DemoPortfolio = () => {
       border: '1px solid rgba(255, 255, 255, 0.1)',
       transition: 'border-color 0.3s ease',
       width: '100%',
-      maxWidth: '250px' // Limit card width
+      maxWidth: '250px'
     },
     skillCardHover: {
       borderColor: 'rgba(196, 132, 252, 0.5)'
@@ -354,7 +354,7 @@ const DemoPortfolio = () => {
     skillContent: {
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center', // Center skill content
+      justifyContent: 'center',
       gap: '12px'
     },
     skillIcon: {
@@ -606,7 +606,7 @@ const DemoPortfolio = () => {
             </div>
             <div style={styles.contactInfo}>
               <Phone style={{ width: '16px', height: '16px' }} />
-              <span>+91 8637071713</span>
+              <span>+91 8637071713 / 8967630832</span>
             </div>
           </div>
         </div>
@@ -618,7 +618,7 @@ const DemoPortfolio = () => {
           <h2 style={styles.heroTitle}>
             AI-Powered Solutions
             <span style={styles.heroGradient}>
-              Demo Portfolio
+              Sumit Portfolio
             </span>
           </h2>
           <p style={styles.heroDescription}>
@@ -813,15 +813,13 @@ const DemoPortfolio = () => {
             
             <div style={styles.videoContainer}>
               {selectedDemo.videoUrl ? (
-                <video
+                <iframe
+                  src={selectedDemo.videoUrl.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')}
                   style={styles.video}
-                  controls
-                  autoPlay
-                  muted
-                >
-                  <source src={selectedDemo.videoUrl} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               ) : (
                 <div style={styles.placeholderContent}>
                   <div>
